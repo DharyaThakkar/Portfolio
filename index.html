@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dharya | Backend Developer Enthusiast</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0b132b',   // deep blue-black
+            secondary: '#5bc0be',   // teal accent
+            accent: '#3a86ff',   // blue accent
+            surface: '#1c2541',   // dark card
+            surfaceL: '#ffffff',   // light card
+            textDark: '#e5e7eb',   // light text on dark
+            textLight: '#0f172a',   // dark text on light
+            mutedDark: '#9ca3af',
+            mutedLight: '#475569',
+          }
+        }
+      }
+    }
+
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-white text-textLight dark:bg-primary dark:text-textDark">
+
+
+  <!-- ============================================= -->
+  <!--                  SIDEBAR + HEADER             -->
+  <!-- ============================================= -->
+  <div class="flex">
+    <!-- Sidebar (desktop) -->
+    <aside class="
+  hidden lg:flex lg:flex-col lg:w-64 lg:fixed lg:h-full
+  bg-white dark:bg-surface
+  border-r border-gray-200 dark:border-gray-800/40
+  pt-20
+">
+
+      <nav class="flex-1 px-6 py-10 space-y-2">
+        <a href="#home"
+          class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-secondary/20 transition-colors">
+          <span>🏠</span> Home
+        </a>
+        <a href="#about"
+          class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-secondary/20 transition-colors">
+          <span>👤</span> About
+        </a>
+        <a href="#projects"
+          class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-secondary/20 transition-colors">
+          <span>🚀</span> Projects
+        </a>
+        <a href="#skills"
+          class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-secondary/20 transition-colors">
+          <span>🛠️</span> Skills
+        </a>
+        <a href="#contact"
+          class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-secondary/20 transition-colors">
+          <span>✉️</span> Contact
+        </a>
+      </nav>
+
+      <!-- Theme toggle in sidebar -->
+      <div class="p-6 border-t border-gray-800/40 dark:border-gray-800/40 light:border-gray-200/70">
+        <button id="theme-toggle-sidebar"
+          class="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg hover:bg-secondary/20 transition-colors text-xl">
+          <span class="dark:hidden light:hidden">🌙</span>
+          <span class="hidden dark:inline">☀️</span>
+          <span>Theme</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="flex-1 lg:ml-64 pt-16">
+
+      <!-- Top Navbar (mobile + small screens) -->
+      <nav class="
+  fixed top-0 left-0 right-0 z-50 lg:hidden
+  bg-white/90 dark:bg-primary/90
+  backdrop-blur-md
+  border-b border-gray-200 dark:border-gray-800/40
+">
+
+        <div class="max-w-7xl mx-auto px-5">
+          <div class="flex justify-between items-center h-16">
+            <a href="#" class="text-xl font-bold">
+              <span class="text-secondary">D</span>harya
+            </a>
+
+            <div class="flex items-center gap-4">
+              <button id="theme-toggle" class="text-2xl" aria-label="Toggle theme">
+                <span class="dark:hidden light:hidden">🌙</span>
+                <span class="hidden dark:inline">☀️</span>
+              </button>
+
+              <button id="menu-toggle" class="text-current focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="
+  hidden
+  bg-white dark:bg-primary
+  border-b border-gray-200 dark:border-gray-800/40
+">
+
+          <div class="px-4 py-6 space-y-4">
+            <a href="#home" class="block nav-link text-lg">Home</a>
+            <a href="#about" class="block nav-link text-lg">About</a>
+            <a href="#projects" class="block nav-link text-lg">Projects</a>
+            <a href="#skills" class="block nav-link text-lg">Skills</a>
+            <a href="#contact" class="block nav-link text-lg">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ============================================= -->
+      <!--                  SECTIONS                     -->
+      <!-- ============================================= -->
+
+      <!-- HERO -->
+     <section id="home" class="min-h-[90vh] flex items-center justify-center pt-20 lg:pt-0 px-6">
+
+        <div class="max-w-5xl mx-auto text-center">
+          <p class="text-secondary font-medium tracking-wider mb-4 text-lg">HELLO THERE! 👋</p>
+          <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+            I'm <span class="text-secondary">Dharya Thakkar</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-mutedLight dark:text-mutedDark">
+
+            Prefinal year student • Passionate about scalable systems, clean APIs & problem solving
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-6 mt-8">
+            <a href="https://github.com/DharyaThakkar" target="_blank"
+              class="px-8 py-4 bg-secondary text-primary font-semibold rounded-xl hover:bg-secondary/90 transition-all shadow-lg shadow-secondary/20">
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/dharya-thakkar-19b5b9299" target="_blank"
+              class="px-8 py-4 border-2 border-secondary text-secondary font-semibold rounded-xl hover:bg-secondary hover:text-primary transition-all">
+              LinkedIn
+            </a>
+          </div>
+
+          <div class="mt-12 flex justify-center gap-10 text-2xl">
+            <a href="https://leetcode.com/DharyaThakkar/" target="_blank"
+              class="hover:text-secondary transition-colors">LeetCode</a>
+            <a href="https://www.codechef.com/users/dharyathakkar" target="_blank"
+              class="hover:text-secondary transition-colors">CodeChef</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+            About <span class="text-secondary">Me</span>
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 text-lg leading-relaxed text-mutedLight dark:text-mutedDark">
+
+              <!-- ←←←← Put your real about text here -->
+              <p>I’m a passionate backend developer with a keen interest in building efficient and scalable web applications</p>
+              <p>I enjoy solving challenging problems, regularly practicing on LeetCode to sharpen my algorithmic and problem-solving skills. Outside of coding, I love listening to music and playing chess, which keeps my mind sharp and strategic.</p>
+              <p>I’m always eager to learn new technologies and take on projects that help me grow as a developer.</p>
+            </div>
+
+            <div class="flex justify-center">
+              <!-- ←←← Put your photo here (or keep placeholder) -->
+              <div class="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden
+            border-4 border-secondary/30
+            shadow-2xl shadow-secondary/10
+            bg-white dark:bg-surface
+            flex items-center justify-center">
+
+                <img class="w-full h-full object-cover" src="/assets/DharyaImg2.jpeg" alt="My Image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="py-24 px-6 bg-gray-50 dark:bg-surface/30">
+
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+            Featured <span class="text-secondary">Projects</span>
+          </h2>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project card example - duplicate & modify -->
+            <div class="
+  bg-white
+  text-textLight
+  border border-gray-200
+  rounded-xl overflow-hidden
+
+  dark:bg-surface
+  dark:text-textDark
+  dark:border-gray-800
+
+  hover:border-secondary/50
+  hover:shadow-xl hover:shadow-secondary/10
+  transition-all duration-300
+">
+
+
+              <div class="h-48 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                <span class="text-2xl font-bold text-gray-600 group-hover:text-secondary/40 transition-colors"><img src="/assets/Screenshot 2026-01-17 221104.png" alt="Project Image"></span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-secondary transition-colors">Real Time Chat Room</h3>
+                <p class="text-mutedLight dark:text-mutedDark mb-5">
+
+                  Built a real-time chat room supporting instant communication with live message updates and a seamless user experience.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-5">
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full">HTML5</span>
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full">CSS</span>
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full">JavaScript</span>
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full">Firebase Firestore</span>
+                </div>
+                <a href="https://github.com/DharyaThakkar/Real-Time-Chat-Room" class="text-secondary hover:underline font-medium">View Project →</a>
+              </div>
+            </div>
+
+            <!-- Add 2–4 more project cards here -->
+            
+             <div class="
+  bg-white
+  text-textLight
+  border border-gray-200
+  rounded-xl overflow-hidden
+
+  dark:bg-surface
+  dark:text-textDark
+  dark:border-gray-800
+
+  hover:border-secondary/50
+  hover:shadow-xl hover:shadow-secondary/10
+  transition-all duration-300
+">
+
+
+              <div class="h-48 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                <span class="text-2xl font-bold text-gray-600 group-hover:text-secondary/40 transition-colors"><img src="/assets/Screenshot 2026-01-17 222759.png" alt="Project Image"></span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-secondary transition-colors">Todo App</h3>
+                <p class="text-mutedLight dark:text-mutedDark mb-5">
+
+                  Built a task management application enabling users to add, update, and manage tasks with a clean and intuitive workflow.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-5">
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full">HTML5</span>
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full">BootStrap</span>
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full">JavaScript</span>
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full">FastAPI</span>
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full">pytest</span>
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full">sqlite</span>
+                </div>
+                <a href="https://github.com/DharyaThakkar/FastAPI" class="text-secondary hover:underline font-medium">View Project →</a>
+              </div>
+            </div>
+            
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+    <!-- SKILLS -->
+<section id="skills" class="py-24 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+      Technical <span class="text-secondary">Skills</span>
+    </h2>
+
+    <div class="space-y-12">
+
+      <!-- Programming Languages -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-6 text-secondary">
+          Programming Languages
+        </h3>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          <div class="skill"><i class="fab fa-java skill-icon"></i>Java</div>
+          <div class="skill"><i class="fab fa-js skill-icon"></i>JavaScript</div>
+          <div class="skill"><i class="fab fa-python skill-icon"></i>Python</div>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-6 text-secondary">
+          Backend Technologies
+        </h3>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          <div class="skill"><i class="fab fa-python skill-icon"></i>Flask</div>
+          <div class="skill"><i class="fas fa-bolt skill-icon"></i>FastAPI</div>
+          <div class="skill"><i class="fab fa-python skill-icon"></i>Django</div>
+          <div class="skill"><i class="fab fa-node-js skill-icon"></i>Node.js</div>
+          <div class="skill"><i class="fas fa-server skill-icon"></i>Express.js</div>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-6 text-secondary">
+          Frontend Technologies
+        </h3>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          <div class="skill"><i class="fab fa-html5 skill-icon"></i>HTML5</div>
+          <div class="skill"><i class="fab fa-css3-alt skill-icon"></i>CSS</div>
+          <div class="skill"><i class="fas fa-wind skill-icon"></i>Tailwind CSS</div>
+        </div>
+      </div>
+
+      <!-- Server Side -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-6 text-secondary">
+          Server Side Technologies
+        </h3>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          <div class="skill"><i class="fas fa-gears skill-icon"></i>Servlets</div>
+          <div class="skill"><i class="fab fa-java skill-icon"></i>JSP</div>
+          <div class="skill"><i class="fas fa-database skill-icon"></i>JDBC</div>
+        </div>
+      </div>
+
+      <!-- Databases -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-6 text-secondary">
+          Databases
+        </h3>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          <div class="skill"><i class="fas fa-database skill-icon"></i>SQL</div>
+          <div class="skill"><i class="fas fa-leaf skill-icon"></i>MongoDB</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+      <!-- CONTACT -->
+      <section id="contact" class="py-24 px-6 bg-gray-50 dark:bg-surface/30">
+
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-4xl md:text-5xl font-bold mb-8">
+            Let's <span class="text-secondary">Connect</span>
+          </h2>
+          <p class="text-xl text-mutedLight dark:text-mutedDark mb-12">
+
+            Have a question? Want to collaborate? Or just want to say hi?<br>
+            Feel free to reach out!
+          </p>
+
+          <!-- Simple mailto form -->
+          <form class="max-w-lg mx-auto space-y-6" action="https://formsubmit.co/7df64498a12c02c59a1c7f4b9d1a9e1e"
+            method="POST">
+            <input type="text" name="name" placeholder="Your Name" required class="
+  w-full px-5 py-4
+  bg-white dark:bg-surface
+  border border-gray-300 dark:border-gray-700
+  rounded-lg
+  focus:outline-none focus:border-secondary
+  transition-colors
+">
+
+            <input type="email" name="email" placeholder="Your Email" required class="
+  w-full px-5 py-4
+  bg-white dark:bg-surface
+  border border-gray-300 dark:border-gray-700
+  rounded-lg
+  focus:outline-none focus:border-secondary
+  transition-colors
+">
+
+            <textarea name="message" rows="6" placeholder="Your Message..." required class="
+  w-full px-5 py-4
+  bg-white dark:bg-surface
+  border border-gray-300 dark:border-gray-700
+  rounded-lg
+  focus:outline-none focus:border-secondary
+  transition-colors
+"></textarea>
+
+            <button type="submit"
+              class="w-full py-5 bg-secondary text-primary font-bold rounded-xl hover:bg-secondary/90 transition-all shadow-lg shadow-secondary/20">
+              Send Message
+            </button>
+          </form>
+
+          <p class="mt-8 text-mutedDark dark:text-mutedDark light:text-mutedLight">
+            Or email me directly: <a href="mailto:dharyathakkar71@gmail.com"
+              class="text-secondary hover:underline">dharyathakkar71@gmail.com</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="py-12 text-center text-mutedLight dark:text-mutedDark
+ border-t border-gray-200 dark:border-gray-800/40">
+
+        <p>© 2026 Dharya Thakkar • Made with passion & backend love</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
